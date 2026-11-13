@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 디버그 빌드에만 생기는 두 번째 앱 아이콘. MainActivity를 화면 목록(S-01~S-17)에서 시작한다. -->
+    <application>
+        <activity-alias
+            android:name=".DebugScreensLauncher"
+            android:exported="true"
+            android:label="@string/debug_screens_launcher"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- 디버그 화면 “오늘 위치 점”의 CSV 내보내기 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.debugfiles"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/debug_file_paths" />
+        </provider>
+    </application>
+
+</manifest>

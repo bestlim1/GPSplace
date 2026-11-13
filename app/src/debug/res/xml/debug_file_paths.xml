@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 디버그 전용 CSV 내보내기 (오늘 위치 점) -->
+<paths>
+    <cache-path name="exports" path="exports/" />
+</paths>

@@ -1,0 +1,314 @@
+<resources>
+    <string name="app_name">GPSplace</string>
+
+    <!-- 화면 이름 (UI 보고서 1.2) — 디버그 화면 목록에서 쓴다 -->
+    <string name="s01_name">시작·역할 선택</string>
+    <string name="s02_name">연결 요청</string>
+    <string name="s03_name">위치 (보호자 홈)</string>
+    <string name="s04_name">기록 – 경로</string>
+    <string name="s05_name">기록 – 체류 목록</string>
+    <string name="s06_name">체류 상세</string>
+    <string name="s07_name">날짜 선택</string>
+    <string name="s08_name">알림 내역</string>
+    <string name="s09_name">알림 상세</string>
+    <string name="s10_name">구역 관리</string>
+    <string name="s11_name">구역 추가·편집</string>
+    <string name="s12_name">연결 관리</string>
+    <string name="s13_name">연결 코드 입력</string>
+    <string name="s14_name">연결 동의</string>
+    <string name="s15_name">위치 권한 안내</string>
+    <string name="s16_name">위치 기록 (보호대상자 홈)</string>
+    <string name="s17_name">전송 상태</string>
+
+    <!-- 공통 -->
+    <string name="error_cause">원인: %1$s</string>
+    <string name="action_cancel">취소</string>
+    <string name="action_retry">다시 시도</string>
+    <string name="cause_timeout">서버가 응답하지 않습니다 (10초 초과)</string>
+    <string name="cause_offline">인터넷에 연결되어 있지 않습니다</string>
+    <string name="cd_back">뒤로</string>
+    <string name="cd_close">닫기</string>
+    <string name="cd_settings">연결 관리</string>
+    <string name="cd_error">오류</string>
+    <string name="today">오늘</string>
+    <string name="yesterday">어제</string>
+    <string name="minutes_ago">%1$d분 전</string>
+    <string name="just_now">방금 전</string>
+    <string name="duration_minutes">%1$d분</string>
+    <string name="duration_hours_minutes">%1$d시간 %2$d분</string>
+    <string name="radius_m">%1$dm</string>
+    <string name="radius_km">%1$skm</string>
+    <string name="time_range">%1$s – %2$s</string>
+    <string name="time_range_tilde">%1$s ~ %2$s</string>
+
+    <!-- 보호자 하단 탭 -->
+    <string name="tab_location">위치</string>
+    <string name="tab_history">기록</string>
+    <string name="tab_alerts">알림</string>
+
+    <!-- 기록 탭 안 상단 탭 -->
+    <string name="history_tab_path">경로</string>
+    <string name="history_tab_stay">체류</string>
+
+    <!-- 상태 칩 -->
+    <string name="status_recording">기록 중</string>
+    <string name="status_delayed">갱신 지연</string>
+    <string name="status_not_recording">기록 안 됨</string>
+    <string name="status_pending_upload">전송 대기</string>
+    <string name="status_linked">연결됨</string>
+
+    <!-- 구역 -->
+    <string name="zone_safe">안전 구역</string>
+    <string name="zone_caution">주의 구역</string>
+    <string name="alert_safe_exit">안전 구역 이탈</string>
+    <string name="alert_caution_enter">주의 구역 진입</string>
+    <string name="alert_row_detail">%1$s · %2$s</string>
+
+    <!-- 알림 채널·진행 알림 -->
+    <string name="channel_recording">위치 기록</string>
+    <string name="channel_zone_alerts">구역 알림</string>
+    <string name="notification_recording">위치 기록 중</string>
+
+    <!-- 지도 표기 -->
+    <string name="map_loading">지도를 불러오는 중</string>
+    <string name="map_missing">기록 누락</string>
+    <string name="map_start">출발</string>
+    <string name="map_route">이동 경로</string>
+    <string name="map_stay">체류</string>
+    <string name="cd_map_recenter">최신 위치 보기</string>
+    <string name="cd_zoom_in">확대</string>
+    <string name="cd_zoom_out">축소</string>
+
+    <!-- S-01 -->
+    <string name="s01_heading">어떻게 사용하시나요?</string>
+    <string name="s01_sub">이 휴대폰에서 사용할 역할을 고르세요.</string>
+    <string name="s01_guardian">보호자</string>
+    <string name="s01_guardian_desc">보호대상자의 위치와 이동 기록을 확인합니다</string>
+    <string name="s01_protected">보호대상자</string>
+    <string name="s01_protected_desc">내 위치 기록을 연결된 보호자에게 제공합니다</string>
+    <string name="s01_note">역할은 연결을 해제하면 다시 고를 수 있습니다.</string>
+
+    <!-- S-02 -->
+    <string name="s02_title">보호대상자 연결</string>
+    <string name="s02_step1">보호대상자 휴대폰에서 앱을 열고 [보호대상자] 선택</string>
+    <string name="s02_step2">아래 코드를 입력하면 동의 요청이 갑니다</string>
+    <string name="s02_remaining">남은 시간 %1$s</string>
+    <string name="s02_valid">유효 10분</string>
+    <string name="s02_waiting_title">동의를 기다리는 중</string>
+    <string name="s02_waiting_desc">보호대상자가 코드를 입력하고 동의하면 자동으로 넘어갑니다.</string>
+    <string name="s02_new_code">새 코드 만들기</string>
+    <string name="s02_loading">연결 코드를 만드는 중</string>
+    <string name="s02_done_title">연결 완료</string>
+    <string name="s02_done_desc">보호대상자 휴대폰과 연결되었습니다. 위치 권한이 허용되면 기록이 시작됩니다.</string>
+    <string name="s02_start">위치 보기 시작</string>
+    <string name="s02_error_title">연결되지 않았습니다</string>
+    <string name="s02_cause_denied">보호대상자가 요청을 거부했습니다</string>
+    <string name="s02_cause_expired">10분이 지나 코드가 만료되었습니다</string>
+    <string name="s02_error_detail">이 코드는 더 이상 쓸 수 없습니다.</string>
+    <string name="s02_go_home">처음으로</string>
+    <string name="s02_issue_failed">연결 코드를 만들지 못했습니다</string>
+    <string name="d04_title">연결 요청을 취소할까요?</string>
+    <string name="d04_message">발급한 코드 %1$s은 더 이상 쓸 수 없습니다.</string>
+    <string name="d04_keep">계속 기다리기</string>
+    <string name="d04_cancel">요청 취소</string>
+
+    <!-- S-03 -->
+    <string name="s03_title">위치</string>
+    <string name="s03_latest">최신 위치</string>
+    <string name="s03_collected">%1$s 수집</string>
+    <string name="s03_stays_today">오늘 체류 %1$d곳</string>
+    <string name="s03_alerts_today">오늘 알림 %1$d건</string>
+    <string name="s03_showing_last">마지막 수집 위치를 표시 중</string>
+    <string name="s03_stays_base">(%1$s 기준)</string>
+    <string name="s03_empty_first_title">아직 받은 위치가 없습니다</string>
+    <string name="s03_empty_first_desc">보호대상자 휴대폰에서 첫 위치가 수집되면 지도에 표시됩니다.</string>
+    <string name="s03_empty_nolink_title">연결된 보호대상자가 없습니다</string>
+    <string name="s03_empty_nolink_desc">연결이 해제되어 위치와 기록을 볼 수 없습니다.</string>
+    <string name="s03_link_again">보호대상자 연결하기</string>
+    <string name="s03_error_title">위치를 불러오지 못했습니다</string>
+    <string name="s03_banner_delayed">%1$d분째 새 위치가 없습니다. 휴대폰이 꺼졌거나 인터넷이 끊겼을 수 있습니다.</string>
+    <string name="s03_banner_offline">오프라인 · %1$s에 받아 둔 위치를 보여 줍니다. 연결되면 자동으로 새로 고칩니다</string>
+    <string name="s03_banner_permission">연결은 완료됐지만 보호대상자 휴대폰의 위치 권한이 꺼져 있어 기록되지 않습니다. 보호대상자 휴대폰에서 권한을 허용해 주세요</string>
+    <string name="s03_banner_service_off">연결은 완료됐지만 보호대상자 휴대폰의 위치(GPS)가 꺼져 있어 기록되지 않습니다. 보호대상자 휴대폰에서 위치를 켜 주세요</string>
+    <string name="s03_banner_pending">보호대상자 휴대폰에 서버 미전송 기록 있음</string>
+    <string name="s03_banner_pending_detail">인터넷이 연결되면 빈 구간이 채워집니다</string>
+
+    <!-- DateBar · S-04 -->
+    <string name="date_today_suffix">%1$s · 오늘</string>
+    <string name="cd_prev_day">이전 날짜</string>
+    <string name="cd_next_day">다음 날짜</string>
+    <string name="cd_pick_date">날짜 선택</string>
+    <string name="s04_loading">%1$s 기록을 불러오는 중</string>
+    <string name="s04_empty_title">기록이 없습니다</string>
+    <string name="s04_empty_desc">%1$s에는 수집된 위치가 없습니다.</string>
+    <string name="s04_pick_other">다른 날짜 선택</string>
+    <string name="s04_error_title">기록을 불러오지 못했습니다</string>
+    <string name="s04_change_date">날짜 바꾸기</string>
+    <string name="s04_banner_offline">오프라인 · 이 휴대폰에 저장된 기록만 표시합니다. 연결되면 서버 기록으로 갱신</string>
+    <string name="s04_saved_range">저장된 범위 %1$s ~ %2$s</string>
+    <string name="s04_collected_range">수집 %1$s ~ %2$s</string>
+    <string name="s04_stay_count">체류 %1$d곳</string>
+    <string name="s04_missing">기록 누락 %1$s (%2$d구간)</string>
+
+    <!-- S-05 -->
+    <string name="s05_last_stay">마지막 체류</string>
+    <string name="s05_duration">체류 %1$s</string>
+    <string name="s05_note">50m 안에서 5분 이상 머문 곳을 체류로 기록합니다. 최신 체류가 맨 위에 옵니다.</string>
+    <string name="s05_empty_title">오늘은 아직 체류 기록이 없습니다</string>
+    <string name="s05_empty_title_past">체류 기록이 없습니다</string>
+    <string name="s05_empty_desc">50m 안에서 5분 이상 머물면 체류로 기록됩니다. 이동 경로는 [경로] 탭에서 볼 수 있습니다.</string>
+    <string name="s05_error_title">체류 기록을 불러오지 못했습니다</string>
+    <string name="s05_cause_offline">인터넷이 끊겼고 이 휴대폰에 저장된 기록도 없습니다</string>
+    <string name="s05_banner_offline">오프라인 · %1$s 기준 목록입니다. 이후 체류는 연결되면 표시됩니다</string>
+    <string name="s05_gap">%1$s ~ %2$s 기록 간격 2분 초과 · 구간 분리</string>
+    <string name="cd_stay_number">체류 %1$d</string>
+
+    <!-- S-06 -->
+    <string name="s06_title">체류 %1$d</string>
+    <string name="s06_start">시작</string>
+    <string name="s06_end">종료</string>
+    <string name="s06_duration">체류 시간</string>
+    <string name="s06_center">대표 좌표</string>
+    <string name="s06_note">대표 좌표는 체류 구간 좌표의 중심입니다. 50m 반경 안에서 5분 이상 유지되어 체류로 판정되었습니다.</string>
+
+    <!-- S-07 -->
+    <string name="s07_title">날짜 선택</string>
+    <string name="s07_future_note">오늘 이후 날짜는 선택할 수 없습니다.</string>
+    <string name="s07_confirm">이 날짜 보기</string>
+
+    <!-- S-08 -->
+    <string name="s08_title">알림</string>
+    <string name="s08_action_zones">구역 관리</string>
+    <string name="s08_empty_nozones_title">등록된 구역이 없습니다</string>
+    <string name="s08_empty_nozones_desc">구역을 등록하면 안전 구역 이탈·주의 구역 진입 때 알림을 받습니다.</string>
+    <string name="s08_add_zone">구역 추가</string>
+    <string name="s08_empty_noalerts_title">최근 알림이 없습니다</string>
+    <string name="s08_error_title">알림 목록을 불러오지 못했습니다</string>
+    <string name="s08_banner_notifications">휴대폰 알림이 꺼져 있어 구역 알림이 울리지 않습니다. 목록에는 계속 기록됩니다.</string>
+    <string name="s08_open_settings">설정 열기</string>
+
+    <!-- S-09 -->
+    <string name="s09_zone">구역</string>
+    <string name="s09_zone_value">%1$s · %2$s · %3$s</string>
+    <string name="s09_judgement">판정</string>
+    <string name="s09_judgement_exit">연속 위치 2개 구역 밖</string>
+    <string name="s09_judgement_enter">연속 위치 2개 구역 안</string>
+    <string name="s09_points_time">판정 위치 시각</string>
+    <string name="s09_points_value">① %1$s · ② %2$s</string>
+    <string name="s09_created">알림 생성</string>
+    <string name="s09_note_exit">연속된 위치 2개가 모두 구역 밖이면 이탈로 판정합니다.</string>
+    <string name="s09_note_enter">연속된 위치 2개가 모두 구역 안이면 진입으로 판정합니다.</string>
+
+    <!-- S-10 -->
+    <string name="s10_title">구역 관리</string>
+    <string name="s10_row_detail">%1$s · 반경 %2$s</string>
+    <string name="s10_note">안전 구역은 벗어날 때, 주의 구역은 들어갈 때 알림을 만듭니다.</string>
+
+    <!-- S-11 -->
+    <string name="s11_title_add">구역 추가</string>
+    <string name="s11_title_edit">구역 편집</string>
+    <string name="s11_map_hint">지도를 움직여 중심을 맞추세요</string>
+    <string name="s11_name_label">이름</string>
+    <string name="s11_name_error">이름을 입력하세요 (1~10자)</string>
+    <string name="s11_type">종류</string>
+    <string name="s11_radius">반경 %1$s</string>
+    <string name="s11_save">저장</string>
+    <string name="s11_delete">구역 삭제</string>
+    <string name="d02_title">작성 중인 구역을 저장하지 않고 나갈까요?</string>
+    <string name="d02_message">입력한 이름·반경은 저장되지 않습니다.</string>
+    <string name="d02_keep">계속 작성</string>
+    <string name="d02_leave">나가기</string>
+    <string name="d03_title">‘%1$s’ 구역을 삭제할까요?</string>
+    <string name="d03_message">이 구역에 대한 알림이 더 이상 만들어지지 않습니다. 지난 알림 기록은 남습니다.</string>
+    <string name="d03_delete">삭제</string>
+
+    <!-- S-12 -->
+    <string name="s12_title">연결 관리</string>
+    <string name="s12_device">연결 기기</string>
+    <string name="s12_device_protected">보호대상자 휴대폰</string>
+    <string name="s12_device_guardian">보호자 휴대폰</string>
+    <string name="s12_since">연결한 날</string>
+    <string name="s12_last_received">마지막 수신</string>
+    <string name="s12_collect_info">수집 정보: 위치 좌표·수집 시각, 약 30초마다 수집합니다.</string>
+    <string name="s12_release_note">해제하면 보호자는 위치와 기록을 더 이상 볼 수 없습니다.</string>
+    <string name="s12_release">연결 해제</string>
+    <string name="d01_title">연결을 해제할까요?</string>
+    <string name="d01_message">해제하면 보호자는 위치와 이동 기록을 더 이상 볼 수 없고, 위치 기록이 멈춥니다.</string>
+
+    <!-- S-13 -->
+    <string name="s13_title">보호자와 연결</string>
+    <string name="s13_guide">보호자 화면에 보이는 6자리 코드를 입력하세요</string>
+    <string name="s13_valid">코드는 발급 후 10분 동안 쓸 수 있습니다.</string>
+    <string name="s13_next">다음</string>
+    <string name="s13_error">코드가 맞지 않거나 만료되었습니다. 보호자 화면의 코드를 다시 확인하세요.</string>
+    <string name="s13_error_offline">코드를 확인하지 못했습니다. 원인: 인터넷에 연결되어 있지 않습니다</string>
+    <string name="cd_code_field">연결 코드 6자리</string>
+
+    <!-- S-14 -->
+    <string name="s14_title">연결 동의</string>
+    <string name="s14_heading">보호자가 위치 확인을 요청했습니다</string>
+    <string name="s14_info">제공 정보</string>
+    <string name="s14_info_value">위치 좌표, 수집 시각</string>
+    <string name="s14_period">수집 주기</string>
+    <string name="s14_period_value">약 30초마다</string>
+    <string name="s14_viewer">볼 수 있는 사람</string>
+    <string name="s14_viewer_value">연결된 보호자 1명</string>
+    <string name="s14_release">연결 해제</string>
+    <string name="s14_release_value">언제든 [연결 관리]에서</string>
+    <string name="s14_no_health">건강 정보·연락처는 수집하지 않습니다.</string>
+    <string name="s14_agree">동의하고 연결</string>
+    <string name="s14_deny">거부</string>
+    <string name="s14_error_title">연결하지 못했습니다</string>
+    <string name="s14_cause_expired">코드가 만료되었거나 보호자가 요청을 취소했습니다</string>
+
+    <!-- S-15 -->
+    <string name="s15_title">위치 권한이 필요합니다</string>
+    <string name="s15_desc">화면이 꺼져 있어도 위치를 기록하려면 위치 권한을 항상 허용으로 설정해야 합니다.</string>
+    <string name="s15_step1">[앱 사용 중에만 허용] 누르기</string>
+    <string name="s15_step2">설정 화면에서 [항상 허용] 고르기</string>
+    <string name="s15_allow">권한 허용하기</string>
+    <string name="s15_later">나중에 하기</string>
+    <string name="s15_later_note">허용하기 전에는 위치를 기록하지 않습니다.</string>
+
+    <!-- S-16 -->
+    <string name="s16_title">위치 기록</string>
+    <string name="s16_last_collected">마지막 수집 %1$s</string>
+    <string name="s16_all_sent">서버 전송 모두 전송됨</string>
+    <string name="s16_pending">서버 전송 대기 %1$d건</string>
+    <string name="s16_guardian_count">연결된 보호자 1명</string>
+    <string name="s16_note">화면을 꺼도 약 30초마다 위치가 기록됩니다. 상단 알림 표시줄에 ‘위치 기록 중’이 계속 표시됩니다.</string>
+    <string name="s16_loading_title">위치를 찾는 중</string>
+    <string name="s16_loading_desc">첫 위치를 받으면 기록이 시작됩니다</string>
+    <string name="s16_empty_title">위치를 기록하지 않습니다</string>
+    <string name="s16_empty_desc">연결된 보호자가 없습니다. 보호자와 연결하면 기록이 시작됩니다.</string>
+    <string name="s16_link">보호자와 연결</string>
+    <string name="s16_error_title">위치를 기록할 수 없습니다</string>
+    <string name="s16_cause_permission">위치 권한이 ‘허용 안 함’입니다</string>
+    <string name="s16_last_normal">마지막 정상 수집: %1$s</string>
+    <string name="s16_fix_permission">권한 설정하기</string>
+    <string name="s16_cause_service">휴대폰 위치(GPS)가 꺼져 있습니다</string>
+    <string name="s16_turn_on_location">위치 켜기</string>
+    <string name="s16_storage_title">기록을 멈췄습니다</string>
+    <string name="s16_cause_storage">휴대폰 저장 공간이 부족합니다</string>
+    <string name="s16_storage_kept">저장된 기록 %1$s건은 보관 중입니다.</string>
+    <string name="s16_check_storage">저장 공간 확인</string>
+    <string name="s16_banner_offline">인터넷 연결 없음 · 기록은 휴대폰에 저장 중</string>
+
+    <!-- S-17 -->
+    <string name="s17_title">전송 상태</string>
+    <string name="s17_pending">전송 대기 %1$d건</string>
+    <string name="s17_sent_today">오늘 전송 %1$d건</string>
+    <string name="s17_last_sent">마지막 전송 %1$s</string>
+    <string name="s17_today_group">오늘 전송 기록</string>
+    <string name="s17_pending_group">전송 대기</string>
+    <string name="s17_hour_row">%1$s ~ %2$s · %3$d건</string>
+    <string name="s17_sending">전송 중 %1$d / %2$d</string>
+    <string name="s17_no_resend">전송된 기록은 다시 보내지 않습니다.</string>
+    <string name="s17_empty_title">오늘 수집한 기록이 없습니다</string>
+    <string name="s17_empty_desc">위치 기록이 시작되면 전송 상태가 여기에 표시됩니다.</string>
+    <string name="s17_error_title">전송하지 못했습니다</string>
+    <string name="s17_error_kept">기록 %1$d건은 이 휴대폰에 그대로 보관 중입니다. 1분 뒤 자동으로 다시 시도합니다.</string>
+    <string name="s17_retry_now">지금 다시 시도</string>
+    <string name="s17_banner_offline">인터넷 연결 없음 · 미전송 %1$d건 대기</string>
+    <string name="s17_banner_offline_detail">연결되면 자동 전송, 같은 기록은 한 번만 보냅니다</string>
+</resources>

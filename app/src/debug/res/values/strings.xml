@@ -1,0 +1,5 @@
+<resources>
+    <string name="debug_screens_launcher">GPSplace 화면 목록</string>
+    <string name="debug_screens_title">화면 목록 (디버그)</string>
+    <string name="debug_points_title">오늘 위치 점 · 간격 · CSV · 서버 점 수</string>
+</resources>
