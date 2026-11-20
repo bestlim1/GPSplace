@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.gpsplace.R
 import com.example.gpsplace.domain.GapDetector
+import com.example.gpsplace.domain.Geo
 import com.example.gpsplace.domain.Stay
 import com.example.gpsplace.domain.TrackPoint
 import com.example.gpsplace.domain.Zone
@@ -129,18 +130,26 @@ private fun ZoomButtons(cameraPositionState: CameraPositionState, modifier: Modi
     }
 }
 
-/** 점들이 모두 보이도록 카메라를 맞춘다. 한 점이면 16배율. */
+/**
+ * 점들이 모두 보이도록 카메라를 맞춘다. 한 점이면 16배율.
+ * 점이 좁게 모여 있으면(머무는 동안의 GPS 흔들림) 경계에 맞추면 건물 단위까지 확대되므로 17배율로 가운데에 둔다.
+ * (move 직후에는 position이 아직 이전 값이라 확대 수준을 나중에 고칠 수 없다)
+ */
 suspend fun CameraPositionState.fit(points: List<LatLng>, paddingPx: Int) {
     when (points.size) {
         0 -> return
         1 -> move(CameraUpdateFactory.newLatLngZoom(points[0], 16f))
         else -> {
             val bounds = LatLngBounds.builder().apply { points.forEach { include(it) } }.build()
-            move(CameraUpdateFactory.newLatLngBounds(bounds, paddingPx))
-            if (position.zoom > 17f) move(CameraUpdateFactory.zoomTo(17f))
+            val spanM = Geo.distanceMeters(bounds.southwest.latitude, bounds.southwest.longitude, bounds.northeast.latitude, bounds.northeast.longitude)
+            if (spanM < FIT_MIN_SPAN_M) move(CameraUpdateFactory.newLatLngZoom(bounds.center, 17f))
+            else move(CameraUpdateFactory.newLatLngBounds(bounds, paddingPx))
         }
     }
 }
+
+/** 이보다 좁게 모인 점들은 경계 맞춤 대신 17배율(화면 폭 약 300m)로 보여 준다 */
+private const val FIT_MIN_SPAN_M = 150.0
 
 fun defaultCamera() = CameraPosition.fromLatLngZoom(SEOUL, 11f)
 
