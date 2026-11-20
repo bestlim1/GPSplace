@@ -111,7 +111,7 @@ fun SyncBody(ui: SyncUi, onBack: () -> Unit, onRetryNow: () -> Unit) {
         ) {
             when {
                 !ui.loaded -> Unit
-                ui.progress != null -> Sending(ui.progress!!)
+                ui.progress != null -> Sending(ui.progress)
                 ui.sentToday == 0 && ui.pending == 0 -> EmptyState(
                     title = stringResource(R.string.s17_empty_title),
                     description = stringResource(R.string.s17_empty_desc),

@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -133,7 +134,7 @@ private fun Detail(alert: RemoteAlert) {
     val zone = if (alert.zoneLat != null && alert.zoneLng != null && alert.radiusM != null) {
         Zone(alert.zoneId, alert.zoneName, zoneType, alert.zoneLat, alert.zoneLng, alert.radiusM)
     } else null
-    val cameraState = rememberCameraPositionState(key = alert.id) { position = defaultCamera() }
+    val cameraState = key(alert.id) { rememberCameraPositionState { position = defaultCamera() } }
     val padding = with(LocalDensity.current) { 48.dp.roundToPx() }
     var loaded by remember { mutableStateOf(false) }
     LaunchedEffect(loaded) {

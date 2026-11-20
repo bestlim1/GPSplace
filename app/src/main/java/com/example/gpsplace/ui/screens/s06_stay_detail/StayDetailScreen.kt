@@ -12,6 +12,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
@@ -129,7 +130,7 @@ fun StayDetailBody(state: StayDetailState, onBack: () -> Unit) {
 private fun Detail(detail: StayDetail) {
     val stay = detail.stay
     val center = LatLng(stay.lat, stay.lng)
-    val cameraState = rememberCameraPositionState(key = stay.id) { position = CameraPosition.fromLatLngZoom(center, 17f) }
+    val cameraState = key(stay.id) { rememberCameraPositionState { position = CameraPosition.fromLatLngZoom(center, 17f) } }
     val density = LocalDensity.current
     AppMap(
         cameraPositionState = cameraState,

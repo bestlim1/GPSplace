@@ -99,7 +99,7 @@ fun GuardianHomeBody(
         topBar = {
             AppTopBar(
                 title = stringResource(R.string.s03_title),
-                actions = { if (state !is ScreenState.Empty || (state as ScreenState.Empty).reason != HomeEmpty.NoLink) SettingsAction(onOpenLinkManage) },
+                actions = { if (state !is ScreenState.Empty || state.reason != HomeEmpty.NoLink) SettingsAction(onOpenLinkManage) },
             )
         },
     ) { padding ->

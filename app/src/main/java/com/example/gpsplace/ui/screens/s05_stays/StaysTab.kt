@@ -4,7 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -132,7 +132,12 @@ private fun StayRow(item: StayItem.Row, onOpenStay: (String) -> Unit) {
     ListRow(onClick = { onOpenStay(item.stay.id) }) {
         NumberCircle(item.number, size = 32.dp)
         Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(Spacing.Xs)) {
-            Row(horizontalArrangement = Arrangement.spacedBy(Spacing.S), verticalAlignment = Alignment.CenterVertically) {
+            // 글자가 커져 한 줄에 안 들어가면 태그를 통째로 다음 줄로 넘긴다 (단어 중간 줄바꿈 방지)
+            FlowRow(
+                horizontalArrangement = Arrangement.spacedBy(Spacing.S),
+                verticalArrangement = Arrangement.spacedBy(Spacing.Xs),
+                itemVerticalAlignment = Alignment.CenterVertically,
+            ) {
                 Text(
                     stringResource(R.string.time_range, Formats.hm(item.stay.startAt), Formats.hm(item.stay.endAt)),
                     style = AppType.Body,
@@ -143,6 +148,7 @@ private fun StayRow(item: StayItem.Row, onOpenStay: (String) -> Unit) {
                         stringResource(R.string.s05_last_stay),
                         style = AppType.Caption,
                         color = AppColors.Primary,
+                        softWrap = false,
                         modifier = Modifier
                             .border(1.dp, AppColors.Primary, RoundedCornerShape(Corners.Chip))
                             .padding(horizontal = Spacing.S, vertical = 2.dp),
