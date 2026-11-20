@@ -196,8 +196,8 @@ private val entries: Map<String, @Composable () -> Unit> = buildMap {
     put("S02_error_expired", s02(LinkRequestUi.Failed(denied = false, code = "482913")))
     put("S02_error_offline", s02(LinkRequestUi.IssueError(offline = true)))
     put("D04", s02(waiting, confirm = true))
-    put("S13_default") { CodeEntryBody("482913", CodeError.None, false, {}, noop, noop) }
-    put("S13_error") { CodeEntryBody("482931", CodeError.Invalid, false, {}, noop, noop) }
+    put("S13_default") { CodeEntryBody("482913", CodeError.None, false, {}, noop, noop, autoFocus = false) }
+    put("S13_error") { CodeEntryBody("482931", CodeError.Invalid, false, {}, noop, noop, autoFocus = false) }
     put("S14_default") { ConsentBody(ConsentError.None, false, noop, noop, noop) }
     put("S14_error") { ConsentBody(ConsentError.Expired, false, noop, noop, noop) }
     put("S15") { PermissionScreen(onFinished = noop) }

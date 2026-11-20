@@ -23,11 +23,15 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.error
@@ -100,6 +104,7 @@ fun CodeEntryBody(
     onCodeChange: (String) -> Unit,
     onSubmit: () -> Unit,
     onBack: () -> Unit,
+    autoFocus: Boolean = true,
 ) {
     Scaffold(
         containerColor = AppColors.White,
@@ -119,6 +124,7 @@ fun CodeEntryBody(
                 isError = error != CodeError.None,
                 onChange = onCodeChange,
                 onDone = onSubmit,
+                autoFocus = autoFocus,
             )
             if (error != CodeError.None) {
                 Row(horizontalArrangement = Arrangement.spacedBy(Spacing.S), verticalAlignment = Alignment.Top) {
@@ -143,11 +149,13 @@ fun CodeEntryBody(
     }
 }
 
-/** 숫자 키패드 하나로 받고, 화면에는 3칸 + 3칸으로 그린다. 오류면 테두리를 두 배로 */
+/** 숫자 키패드 하나로 받고, 화면에는 3칸 + 3칸으로 그린다. 오류면 테두리를 두 배로. 화면에 들어오면 바로 키패드를 띄운다 */
 @Composable
-private fun CodeField(code: String, isError: Boolean, onChange: (String) -> Unit, onDone: () -> Unit) {
+private fun CodeField(code: String, isError: Boolean, onChange: (String) -> Unit, onDone: () -> Unit, autoFocus: Boolean) {
     val description = stringResource(R.string.cd_code_field)
     val errorText = stringResource(R.string.s13_error)
+    val focusRequester = remember { FocusRequester() }
+    if (autoFocus) LaunchedEffect(Unit) { focusRequester.requestFocus() }
     BasicTextField(
         value = code,
         onValueChange = onChange,
@@ -156,6 +164,7 @@ private fun CodeField(code: String, isError: Boolean, onChange: (String) -> Unit
         singleLine = true,
         modifier = Modifier
             .fillMaxWidth()
+            .focusRequester(focusRequester)
             .semantics {
                 contentDescription = description
                 if (isError) error(errorText)
